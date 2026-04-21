@@ -7,10 +7,15 @@
         body { font-family: sans-serif; margin: 2rem; max-width: 600px; }
         input, button { margin: 0.5rem 0; padding: 0.5rem; width: 100%; }
         .result { margin-top: 1rem; font-weight: bold; background: #f0f0f0; padding: 1rem; }
+        .nav { margin-bottom: 1rem; }
+.nav a { margin-right: 1rem; }
     </style>
 </head>
 <body>
     <h1>CogyShift — Калькулятор смены</h1>
+    <div class="nav">
+    <a href="/history.html">История смен</a>
+</div>
     <div>
         <label>Часы: <input type="number" id="hours" step="0.5"></label>
         <label>Ставка (₽/час): <input type="number" id="rate" step="0.01"></label>

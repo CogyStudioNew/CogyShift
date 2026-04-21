@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CogyShift — История смен</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .nav { margin-bottom: 1rem; }
+        .nav a { margin-right: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">← Калькулятор</a>
+        <a href="/history.html">История смен</a>
+    </div>
+
+    <h1>История смен</h1>
+    <div id="loading">Загрузка...</div>
+    <table id="history-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Дата и время</th>
+                <th>Часы</th>
+                <th>Ставка (₽/ч)</th>
+                <th>Премия (₽)</th>
+                <th>Начислено (₽)</th>
+                <th>НДФЛ 13% (₽)</th>
+                <th>На руки (₽)</th>
+            </tr>
+        </thead>
+        <tbody id="history-body"></tbody>
+    </table>
+
+    <script>
+        async function loadHistory() {
+            try {
+                const response = await fetch('/history');
+                const records = await response.json();
+                
+                const tbody = document.getElementById('history-body');
+                tbody.innerHTML = '';
+                
+                records.forEach(record => {
+                    const row = tbody.insertRow();
+                    row.insertCell(0).textContent = new Date(record.calculatedAt).toLocaleString();
+                    row.insertCell(1).textContent = record.hours;
+                    row.insertCell(2).textContent = record.rate;
+                    row.insertCell(3).textContent = record.bonus;
+                    row.insertCell(4).textContent = record.grossSalary;
+                    row.insertCell(5).textContent = record.tax;
+                    row.insertCell(6).textContent = record.netSalary;
+                });
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('history-table').style.display = 'table';
+            } catch (error) {
+                document.getElementById('loading').textContent = 'Ошибка загрузки истории: ' + error.message;
+            }
+        }
+        
+        loadHistory();
+    </script>
+</body>
+</html>

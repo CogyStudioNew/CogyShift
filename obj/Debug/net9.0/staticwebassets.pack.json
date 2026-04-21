@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "/home/cogy/Projects/CogyShift/wwwroot/history.html",
+      "PackagePath": "staticwebassets/history.html"
+    },
+    {
       "Id": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
       "PackagePath": "staticwebassets/index.html"
     },
