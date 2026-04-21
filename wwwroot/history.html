@@ -19,10 +19,14 @@
     </div>
 
     <h1>История смен</h1>
+    <div style="margin-bottom: 1rem;">
+    <button id="clearAllBtn" style="background-color: #dc3545; color: white; border: none; padding: 0.5rem 1rem; cursor: pointer;">Очистить историю</button>
+</div>
     <div id="loading">Загрузка...</div>
     <table id="history-table" style="display: none;">
         <thead>
             <tr>
+                <th>Действия</th>
                 <th>Дата и время</th>
                 <th>Часы</th>
                 <th>Ставка (₽/ч)</th>
@@ -36,31 +40,60 @@
     </table>
 
     <script>
-        async function loadHistory() {
-            try {
-                const response = await fetch('/history');
-                const records = await response.json();
-                
-                const tbody = document.getElementById('history-body');
-                tbody.innerHTML = '';
-                
-                records.forEach(record => {
-                    const row = tbody.insertRow();
-                    row.insertCell(0).textContent = new Date(record.calculatedAt).toLocaleString();
-                    row.insertCell(1).textContent = record.hours;
-                    row.insertCell(2).textContent = record.rate;
-                    row.insertCell(3).textContent = record.bonus;
-                    row.insertCell(4).textContent = record.grossSalary;
-                    row.insertCell(5).textContent = record.tax;
-                    row.insertCell(6).textContent = record.netSalary;
-                });
-                
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('history-table').style.display = 'table';
-            } catch (error) {
-                document.getElementById('loading').textContent = 'Ошибка загрузки истории: ' + error.message;
+        document.addEventListener('DOMContentLoaded', () => {
+    const clearBtn = document.getElementById('clearAllBtn');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', async () => {
+            if (confirm('Вы уверены, что хотите удалить ВСЮ историю смен? Это действие необратимо.')) {
+                try {
+                    const response = await fetch('/history', { method: 'DELETE' });
+                    const result = await response.json();
+                    alert(result);
+                    loadHistory(); // перезагружаем таблицу (она станет пустой)
+                } catch (error) {
+                    alert('Ошибка при очистке истории: ' + error.message);
+                }
             }
-        }
+        });
+    }
+});
+        async function loadHistory() {
+    try {
+        const response = await fetch('/history');
+        const records = await response.json();
+        
+        const tbody = document.getElementById('history-body');
+        tbody.innerHTML = '';
+        
+        records.forEach(record => {
+            const row = tbody.insertRow();
+            row.insertCell(0).textContent = new Date(record.calculatedAt).toLocaleString();
+            row.insertCell(1).textContent = record.hours;
+            row.insertCell(2).textContent = record.rate;
+            row.insertCell(3).textContent = record.bonus;
+            row.insertCell(4).textContent = record.grossSalary;
+            row.insertCell(5).textContent = record.tax;
+            row.insertCell(6).textContent = record.netSalary;
+            
+            // Ячейка с кнопкой удаления
+            const deleteCell = row.insertCell(7);
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Удалить';
+            deleteBtn.onclick = async () => {
+                if (confirm(`Удалить запись от ${new Date(record.calculatedAt).toLocaleString()}?`)) {
+                    await fetch(`/history/${record.id}`, { method: 'DELETE' });
+                    loadHistory(); // перезагружаем таблицу
+                }
+            };
+            deleteCell.appendChild(deleteBtn);
+        });
+        
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('history-table').style.display = 'table';
+    } catch (error) {
+        document.getElementById('loading').textContent = 'Ошибка загрузки истории: ' + error.message;
+    }
+}
         
         loadHistory();
     </script>

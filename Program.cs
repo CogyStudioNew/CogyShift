@@ -64,6 +64,27 @@ app.MapPost("/shift/calculate", async (ShiftRequest request, AppDbContext db) =>
     };
 });
 
+app.MapDelete("/history/{id}", async (int id, AppDbContext db) =>
+{
+    var record = await db.ShiftRecords.FindAsync(id);
+    if (record == null)
+    {
+        return Results.NotFound($"Запись с id {id} не найдена");
+    }
+    
+    db.ShiftRecords.Remove(record);
+    await db.SaveChangesAsync();
+    return Results.Ok($"Запись {id} удалена");
+});
+
+app.MapDelete("/history", async (AppDbContext db) =>
+{
+    var allRecords = db.ShiftRecords.ToList();
+    db.ShiftRecords.RemoveRange(allRecords);
+    await db.SaveChangesAsync();
+    return Results.Ok("Все записи удалены");
+});
+
 app.Run();
 
 record ShiftRequest(decimal Hours, decimal Rate, decimal Bonus);

@@ -165,5 +165,5 @@
 /home/cogy/Projects/CogyShift/bin/Debug/net9.0/runtimes/win-arm64/native/e_sqlite3.dll
 /home/cogy/Projects/CogyShift/bin/Debug/net9.0/runtimes/win-x64/native/e_sqlite3.dll
 /home/cogy/Projects/CogyShift/bin/Debug/net9.0/runtimes/win-x86/native/e_sqlite3.dll
-/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/jsmvfcuen0-6n1natwsss.gz
 /home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-n4bh90r7ag.gz
+/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/jsmvfcuen0-kxi3rl7445.gz
