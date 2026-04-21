@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using CogyShift.Data;
+using CogyShift.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=cogyshift.db"));
 
 var app = builder.Build();
 
@@ -16,11 +22,35 @@ app.UseStaticFiles();
 app.MapGet("/api", () => "ShiftKeeper API works!");
 app.MapGet("/shift", () => new { Message = "Hello from ShiftController" });
 
-app.MapPost("/shift/calculate", (ShiftRequest request) =>
+app.MapGet("/history", async (AppDbContext db) =>
 {
-    decimal grossSalary = (request.Hours * request.Rate) + request.Bonus;
-    decimal tax = grossSalary * 0.13m;
-    decimal netSalary = grossSalary - tax;
+    var records = await db.ShiftRecords
+        .OrderByDescending(r => r.CalculatedAt)
+        .Take(20)
+        .ToListAsync();
+    
+    return records;
+});
+
+app.MapPost("/shift/calculate", async (ShiftRequest request, AppDbContext db) =>
+{
+    var grossSalary = (request.Hours * request.Rate) + request.Bonus;
+    var tax = grossSalary * 0.13m;
+    var netSalary = grossSalary - tax;
+    
+    var record = new ShiftRecord
+    {
+        CalculatedAt = DateTime.Now,
+        Hours = request.Hours,
+        Rate = request.Rate,
+        Bonus = request.Bonus,
+        GrossSalary = grossSalary,
+        Tax = tax,
+        NetSalary = netSalary
+    };
+    
+    db.ShiftRecords.Add(record);
+    await db.SaveChangesAsync();
     
     return new
     {
@@ -29,7 +59,8 @@ app.MapPost("/shift/calculate", (ShiftRequest request) =>
         Bonus = request.Bonus,
         GrossSalary = grossSalary,
         Tax = tax,
-        NetSalary = netSalary
+        NetSalary = netSalary,
+        SavedId = record.Id
     };
 });
 
