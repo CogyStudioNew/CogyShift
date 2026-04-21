@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CogyShift</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; max-width: 600px; }
+        input, button { margin: 0.5rem 0; padding: 0.5rem; width: 100%; }
+        .result { margin-top: 1rem; font-weight: bold; background: #f0f0f0; padding: 1rem; }
+    </style>
+</head>
+<body>
+    <h1>CogyShift — Калькулятор смены</h1>
+    <div>
+        <label>Часы: <input type="number" id="hours" step="0.5"></label>
+        <label>Ставка (₽/час): <input type="number" id="rate" step="0.01"></label>
+        <label>Премия (₽): <input type="number" id="bonus" step="0.01"></label>
+        <button onclick="calculate()">Рассчитать</button>
+    </div>
+    <div class="result" id="result"></div>
+
+    <script>
+        async function calculate() {
+            const hours = parseFloat(document.getElementById('hours').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const bonus = parseFloat(document.getElementById('bonus').value);
+
+            const response = await fetch('/shift/calculate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ hours, rate, bonus })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerHTML = `Зарплата за смену: ${data.totalSalary} ₽`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
+      "PackagePath": "staticwebassets/index.html"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.ShiftKeeperMinimal.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.ShiftKeeperMinimal.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.ShiftKeeperMinimal.props",
+      "PackagePath": "build\\ShiftKeeperMinimal.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.ShiftKeeperMinimal.props",
+      "PackagePath": "buildMultiTargeting\\ShiftKeeperMinimal.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.ShiftKeeperMinimal.props",
+      "PackagePath": "buildTransitive\\ShiftKeeperMinimal.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

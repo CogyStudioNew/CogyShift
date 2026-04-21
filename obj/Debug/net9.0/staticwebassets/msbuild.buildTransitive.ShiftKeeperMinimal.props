@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/ShiftKeeperMinimal.props" />
+</Project>

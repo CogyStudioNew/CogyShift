@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/ShiftKeeperMinimal/index.avq3olsetb.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"avq3olsetb"},{"Name":"integrity","Value":"sha256-xnb/94zytkM9bev\u002BCXp6rw10fMcqirxOl7JDIbH5WHo="},{"Name":"label","Value":"_content/ShiftKeeperMinimal/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1546"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022xnb/94zytkM9bev\u002BCXp6rw10fMcqirxOl7JDIbH5WHo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 21 Apr 2026 11:33:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ShiftKeeperMinimal/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-xnb/94zytkM9bev\u002BCXp6rw10fMcqirxOl7JDIbH5WHo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1546"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022xnb/94zytkM9bev\u002BCXp6rw10fMcqirxOl7JDIbH5WHo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 21 Apr 2026 11:33:12 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

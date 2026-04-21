@@ -1,0 +1,362 @@
+{
+  "Version": 1,
+  "Hash": "lEuKNqYSQfUSdtQRMTmoG99hBymkRthdy31nUVKpmU4=",
+  "Source": "ShiftKeeperMinimal",
+  "BasePath": "_content/ShiftKeeperMinimal",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ShiftKeeperMinimal/wwwroot",
+      "Source": "ShiftKeeperMinimal",
+      "ContentRoot": "/home/cogy/Projects/CogyShift/wwwroot/",
+      "BasePath": "_content/ShiftKeeperMinimal",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz",
+      "SourceId": "ShiftKeeperMinimal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/ShiftKeeperMinimal",
+      "RelativePath": "index#[.{fingerprint=avq3olsetb}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2gbsayyfi4",
+      "Integrity": "DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/home/cogy/Projects/CogyShift/wwwroot/index.html"
+    },
+    {
+      "Identity": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
+      "SourceId": "ShiftKeeperMinimal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/cogy/Projects/CogyShift/wwwroot/",
+      "BasePath": "_content/ShiftKeeperMinimal",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "avq3olsetb",
+      "Integrity": "xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.avq3olsetb.html",
+      "AssetFile": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001283697047"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "778"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "avq3olsetb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo="
+        }
+      ]
+    },
+    {
+      "Route": "index.avq3olsetb.html",
+      "AssetFile": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1546"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "avq3olsetb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo="
+        }
+      ]
+    },
+    {
+      "Route": "index.avq3olsetb.html.gz",
+      "AssetFile": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "778"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "avq3olsetb"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001283697047"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "778"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "/home/cogy/Projects/CogyShift/wwwroot/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1546"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xnb/94zytkM9bev+CXp6rw10fMcqirxOl7JDIbH5WHo="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "778"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 21 Apr 2026 11:33:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DuU5WDz5/5mjVvYOPYcKgkT+5uJmz7gYwbsoGfBfT4c="
+        }
+      ]
+    }
+  ]
+}
