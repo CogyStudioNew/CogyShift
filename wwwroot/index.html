@@ -21,18 +21,23 @@
 
     <script>
         async function calculate() {
-            const hours = parseFloat(document.getElementById('hours').value);
-            const rate = parseFloat(document.getElementById('rate').value);
-            const bonus = parseFloat(document.getElementById('bonus').value);
+    const hours = parseFloat(document.getElementById('hours').value);
+    const rate = parseFloat(document.getElementById('rate').value);
+    const bonus = parseFloat(document.getElementById('bonus').value);
 
-            const response = await fetch('/shift/calculate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ hours, rate, bonus })
-            });
-            const data = await response.json();
-            document.getElementById('result').innerHTML = `Зарплата за смену: ${data.totalSalary} ₽`;
-        }
+    const response = await fetch('/shift/calculate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ hours, rate, bonus })
+    });
+    const data = await response.json();
+    
+    document.getElementById('result').innerHTML = `
+        <p>Начислено: ${data.grossSalary} ₽</p>
+        <p>НДФЛ (13%): ${data.tax} ₽</p>
+        <p><strong>На руки: ${data.netSalary} ₽</strong></p>
+    `;
+}
     </script>
 </body>
 </html>

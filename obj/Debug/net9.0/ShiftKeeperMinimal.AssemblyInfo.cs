@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShiftKeeperMinimal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90273c65500e2e3c233615cde8d1d5cd5e9d1ffb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShiftKeeperMinimal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShiftKeeperMinimal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

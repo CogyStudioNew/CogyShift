@@ -18,24 +18,21 @@ app.MapGet("/shift", () => new { Message = "Hello from ShiftController" });
 
 app.MapPost("/shift/calculate", (ShiftRequest request) =>
 {
-    decimal salary = (request.Hours * request.Rate) + request.Bonus;
+    decimal grossSalary = (request.Hours * request.Rate) + request.Bonus;
+    decimal tax = grossSalary * 0.13m;
+    decimal netSalary = grossSalary - tax;
     
-    return new 
-    { 
-        Hours = request.Hours, 
-        Rate = request.Rate, 
+    return new
+    {
+        Hours = request.Hours,
+        Rate = request.Rate,
         Bonus = request.Bonus,
-        TotalSalary = salary 
+        GrossSalary = grossSalary,
+        Tax = tax,
+        NetSalary = netSalary
     };
 });
 
 app.Run();
-
-// Модель должна быть ОПРЕДЕЛЕНА ПОСЛЕ app.Run()?
-// НЕТ! В C# record должен быть определён ДО app.Run() в той же области видимости.
-// Но правильнее вынести его ЗА ПРЕДЕЛЫ Main, то есть ПОСЛЕ app.Run()? В минимальном API можно определить record после, но некоторые компиляторы ругаются.
-// Самый надёжный способ: определить record перед вызовом app.Run() и внутри того же файла, но вне основного тела.
-
-// Проще всего: объявить record прямо перед app.Run():
 
 record ShiftRequest(decimal Hours, decimal Rate, decimal Bonus);

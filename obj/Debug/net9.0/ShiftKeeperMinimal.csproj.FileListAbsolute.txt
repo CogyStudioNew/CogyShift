@@ -69,4 +69,5 @@
 /home/cogy/Projects/CogyShift/obj/Debug/net9.0/ShiftKeeperMinimal.pdb
 /home/cogy/Projects/CogyShift/obj/Debug/net9.0/ShiftKeeperMinimal.genruntimeconfig.cache
 /home/cogy/Projects/CogyShift/obj/Debug/net9.0/ref/ShiftKeeperMinimal.dll
-/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-avq3olsetb.gz
+/home/cogy/Projects/CogyShift/obj/Debug/net9.0/ShiftKeeperMinimal.sourcelink.json
+/home/cogy/Projects/CogyShift/obj/Debug/net9.0/compressed/v5rk2zgnrs-983xwatoqg.gz
